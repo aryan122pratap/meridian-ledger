@@ -23,6 +23,8 @@ export const siteConfig = {
     phone: "(512) 555-0148",
     phoneHref: "tel:+15125550148",
     email: "hello@meridianledger.com",
+    // Placeholder Formspree endpoint — swap in the real form ID before launch.
+    formEndpoint: "https://formspree.io/f/YOUR_FORM_ID",
     address: {
       street: "812 Congress Ave, Suite 400",
       city: "Austin",
