@@ -12,7 +12,23 @@ export async function generateMetadata({ params }: PageProps<"/insights/[slug]">
   const { slug } = await params;
   const article = articles.find((a) => a.slug === slug);
   if (!article) return {};
-  return { title: article.title, description: article.seoDescription };
+  return {
+    title: article.title,
+    description: article.seoDescription,
+    openGraph: {
+      title: article.title,
+      description: article.seoDescription,
+      type: "article",
+      publishedTime: article.publishedAt,
+      images: ["/opengraph-image"],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: article.title,
+      description: article.seoDescription,
+      images: ["/opengraph-image"],
+    },
+  };
 }
 
 function formatDate(dateStr: string) {

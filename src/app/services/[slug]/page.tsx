@@ -18,7 +18,22 @@ export async function generateMetadata({ params }: PageProps<"/services/[slug]">
   const { slug } = await params;
   const service = services.find((s) => s.slug === slug);
   if (!service) return {};
-  return { title: service.name, description: service.seoDescription };
+  return {
+    title: service.name,
+    description: service.seoDescription,
+    openGraph: {
+      title: service.name,
+      description: service.seoDescription,
+      type: "article",
+      images: ["/opengraph-image"],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: service.name,
+      description: service.seoDescription,
+      images: ["/opengraph-image"],
+    },
+  };
 }
 
 function paragraphs(text: string) {

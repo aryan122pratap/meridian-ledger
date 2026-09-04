@@ -12,7 +12,22 @@ export async function generateMetadata({ params }: PageProps<"/industries/[slug]
   const { slug } = await params;
   const industry = industries.find((i) => i.slug === slug);
   if (!industry) return {};
-  return { title: industry.name, description: industry.seoDescription };
+  return {
+    title: industry.name,
+    description: industry.seoDescription,
+    openGraph: {
+      title: industry.name,
+      description: industry.seoDescription,
+      type: "article",
+      images: ["/opengraph-image"],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: industry.name,
+      description: industry.seoDescription,
+      images: ["/opengraph-image"],
+    },
+  };
 }
 
 function paragraphs(text: string) {
