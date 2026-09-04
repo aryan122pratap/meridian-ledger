@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import { Fraunces, Inter } from "next/font/google";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { JsonLd } from "@/components/JsonLd";
 import { siteConfig } from "@/config/site";
+import { getLocalBusinessSchema } from "@/lib/schema";
 import "./globals.css";
 
 const fraunces = Fraunces({
@@ -29,6 +31,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${fraunces.variable} ${inter.variable} h-full`}>
       <body className="flex min-h-full flex-col bg-paper font-body text-ink antialiased">
+        <JsonLd data={getLocalBusinessSchema()} />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

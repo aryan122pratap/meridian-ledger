@@ -7,6 +7,8 @@ import { Accordion } from "@/components/ui/Accordion";
 import { Disclaimer } from "@/components/ui/Disclaimer";
 import { CTA } from "@/components/ui/CTA";
 import { Figure } from "@/components/ui/Figure";
+import { JsonLd } from "@/components/JsonLd";
+import { getFaqSchema } from "@/lib/schema";
 
 export async function generateStaticParams() {
   return services.map((service) => ({ slug: service.slug }));
@@ -34,6 +36,7 @@ export default async function ServicePage({ params }: PageProps<"/services/[slug
 
   return (
     <>
+      <JsonLd data={getFaqSchema(service.faqs)} />
       <LedgerSection label={<span className="tabular-nums">{service.code}</span>} className="pt-ledger-3">
         <p className="text-14 text-slate">Service</p>
         <h1 className="mt-2 font-display text-38 font-medium text-ink">{service.name}</h1>

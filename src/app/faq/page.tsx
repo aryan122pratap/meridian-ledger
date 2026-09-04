@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import { LedgerSection } from "@/components/layout/LedgerSection";
 import { Accordion } from "@/components/ui/Accordion";
 import { CTA } from "@/components/ui/CTA";
+import { JsonLd } from "@/components/JsonLd";
 import { faqs } from "@/content/faqs";
+import { getFaqSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "FAQ",
@@ -12,6 +14,7 @@ export const metadata: Metadata = {
 export default function FaqPage() {
   return (
     <>
+      <JsonLd data={getFaqSchema(faqs)} />
       <LedgerSection label="FAQ" className="pt-ledger-3">
         <h1 className="font-display text-38 font-medium text-ink">Questions we hear a lot.</h1>
         <div className="mt-8 max-w-2xl">

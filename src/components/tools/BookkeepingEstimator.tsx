@@ -32,6 +32,7 @@ export function BookkeepingEstimator() {
           <span className="text-16 text-ink">Monthly transactions</span>
           <input
             type="range"
+            className="w-full"
             min={20}
             max={500}
             step={10}
@@ -45,6 +46,7 @@ export function BookkeepingEstimator() {
           <span className="text-16 text-ink">Bank and credit accounts</span>
           <input
             type="range"
+            className="w-full"
             min={1}
             max={10}
             step={1}
@@ -86,6 +88,7 @@ export function BookkeepingEstimator() {
           <span className="text-16 text-ink">Months behind on your books</span>
           <input
             type="range"
+            className="w-full"
             min={0}
             max={24}
             step={1}

@@ -9,6 +9,8 @@ type Status = "idle" | "submitting" | "success" | "error";
 const inputStyles =
   "border border-rule bg-paper px-4 py-3 text-16 text-ink focus-visible:outline-2 focus-visible:outline-ink focus-visible:outline-offset-2";
 
+const WEB3FORMS_ENDPOINT = "https://api.web3forms.com/submit";
+
 export function ContactForm() {
   const [status, setStatus] = useState<Status>("idle");
 
@@ -18,15 +20,18 @@ export function ContactForm() {
 
     const form = event.currentTarget;
     const data = new FormData(form);
+    data.append("access_key", siteConfig.contact.web3formsAccessKey);
+    data.append("subject", `New inquiry from ${siteConfig.name} website`);
 
     try {
-      const response = await fetch(siteConfig.contact.formEndpoint, {
+      const response = await fetch(WEB3FORMS_ENDPOINT, {
         method: "POST",
         body: data,
         headers: { Accept: "application/json" },
       });
+      const result = await response.json();
 
-      if (response.ok) {
+      if (response.ok && result.success) {
         setStatus("success");
         form.reset();
       } else {
@@ -67,7 +72,8 @@ export function ContactForm() {
         <textarea name="message" required rows={5} className={inputStyles} />
       </label>
 
-      <input type="text" name="_gotcha" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />
+      {/* Web3Forms honeypot convention: a hidden checkbox that should stay unchecked. */}
+      <input type="checkbox" name="botcheck" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />
 
       <Button type="submit" variant="primary" disabled={status === "submitting"}>
         {status === "submitting" ? "Sending..." : "Send message"}
