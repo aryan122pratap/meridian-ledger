@@ -1,5 +1,7 @@
 import { DuotoneImage } from "@/components/ui/DuotoneImage";
 import { Reveal } from "@/components/ui/Reveal";
+import { Spotlight } from "@/components/motion/Spotlight";
+import { RevealText } from "@/components/motion/RevealText";
 
 export function ApproachBand() {
   return (
@@ -13,12 +15,12 @@ export function ApproachBand() {
         />
       </div>
       <div aria-hidden="true" className="absolute inset-0 -z-10 bg-ink/55" />
-      <div className="mx-auto max-w-6xl px-6 py-ledger-3 sm:px-12">
+      <Spotlight className="mx-auto max-w-6xl px-6 py-ledger-3 sm:px-12">
         <Reveal>
           <div className="max-w-2xl">
             <p className="font-display text-16 font-medium text-paper/80">Why monthly, not annual</p>
             <h2 className="mt-4 font-display text-38 font-medium text-paper">
-              A tax return is just the last page of a story your books already told.
+              <RevealText text="A tax return is just the last page of a story your books already told." />
             </h2>
             <p className="mt-6 text-18 text-paper/85">
               Most firms meet you in March. We&apos;d rather have already seen the problem in July,
@@ -28,7 +30,7 @@ export function ApproachBand() {
             </p>
           </div>
         </Reveal>
-      </div>
+      </Spotlight>
     </section>
   );
 }

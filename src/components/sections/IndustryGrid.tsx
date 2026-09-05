@@ -3,6 +3,7 @@ import { industries } from "@/content/industries";
 import { LedgerSection } from "@/components/layout/LedgerSection";
 import { DuotoneImage } from "@/components/ui/DuotoneImage";
 import { Reveal } from "@/components/ui/Reveal";
+import { TiltCard } from "@/components/motion/TiltCard";
 
 type IndustryGridProps = {
   limit?: number;
@@ -19,18 +20,21 @@ export function IndustryGrid({ limit, variant = "list", tone = "paper" }: Indust
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((industry, index) => (
             <Reveal key={industry.slug} delay={(index % 3) * 80}>
-              <Link href={`/industries/${industry.slug}`} className="group block h-full border border-rule">
-                <DuotoneImage
-                  src={industry.image}
-                  alt=""
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="aspect-[4/3]"
-                />
-                <div className="p-6">
-                  <p className="rule-hover inline-block text-18 text-ink">{industry.name}</p>
-                  <p className="mt-2 text-16 text-slate">{industry.summary}</p>
-                </div>
-              </Link>
+              <TiltCard>
+                <Link href={`/industries/${industry.slug}`} className="block h-full border border-rule">
+                  <DuotoneImage
+                    src={industry.image}
+                    alt=""
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="aspect-[4/3]"
+                    interactive
+                  />
+                  <div className="p-6">
+                    <p className="rule-hover inline-block text-18 text-ink">{industry.name}</p>
+                    <p className="mt-2 text-16 text-slate">{industry.summary}</p>
+                  </div>
+                </Link>
+              </TiltCard>
             </Reveal>
           ))}
         </div>

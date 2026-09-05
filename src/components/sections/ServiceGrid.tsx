@@ -4,6 +4,7 @@ import { LedgerSection } from "@/components/layout/LedgerSection";
 import { Figure } from "@/components/ui/Figure";
 import { DuotoneImage } from "@/components/ui/DuotoneImage";
 import { Reveal } from "@/components/ui/Reveal";
+import { TiltCard } from "@/components/motion/TiltCard";
 
 type ServiceGridProps = {
   limit?: number;
@@ -20,24 +21,27 @@ export function ServiceGrid({ limit, variant = "list", tone = "paper" }: Service
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((service, index) => (
             <Reveal key={service.slug} delay={(index % 3) * 80}>
-              <Link href={`/services/${service.slug}`} className="group block h-full border border-rule">
-                <DuotoneImage
-                  src={service.image}
-                  alt=""
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="aspect-[4/3]"
-                />
-                <div className="p-6">
-                  <span className="text-14 tabular-nums text-slate">{service.code}</span>
-                  <p className="rule-hover mt-1 inline-block text-18 text-ink">{service.name}</p>
-                  <p className="mt-3 text-16 text-slate">
-                    From{" "}
-                    <Figure emphasis prefix="$">
-                      {service.included[0].startingPrice.toLocaleString()}
-                    </Figure>
-                  </p>
-                </div>
-              </Link>
+              <TiltCard>
+                <Link href={`/services/${service.slug}`} className="block h-full border border-rule">
+                  <DuotoneImage
+                    src={service.image}
+                    alt=""
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="aspect-[4/3]"
+                    interactive
+                  />
+                  <div className="p-6">
+                    <span className="text-14 tabular-nums text-slate">{service.code}</span>
+                    <p className="rule-hover mt-1 inline-block text-18 text-ink">{service.name}</p>
+                    <p className="mt-3 text-16 text-slate">
+                      From{" "}
+                      <Figure emphasis prefix="$">
+                        {service.included[0].startingPrice.toLocaleString()}
+                      </Figure>
+                    </p>
+                  </div>
+                </Link>
+              </TiltCard>
             </Reveal>
           ))}
         </div>

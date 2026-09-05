@@ -62,6 +62,20 @@ body {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+
+  /* The wildcard above doesn't reach the view-transition pseudo-element tree. */
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation-duration: 0.01ms !important;
+  }
+
+  .cursor-dot,
+  .cursor-ring,
+  .ambient-glow,
+  .spotlight-glow {
+    display: none !important;
+  }
 }
 
 /* Ledger-grid texture: 1px rule lines on a 40px grid, used sparingly as a section backdrop. */
@@ -111,4 +125,114 @@ body {
 }
 .animate-fade-in {
   animation: fade-in 0.3s ease;
+}
+
+/* Grain texture — a faint printed-paper quality over the whole page. Purely
+   decorative, so it sits outside the accessibility tree. */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 65;
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Thin scroll-progress bar, mounted once in the root layout. */
+.scroll-progress-track {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 60;
+  height: 2px;
+  background: transparent;
+}
+.scroll-progress-fill {
+  height: 100%;
+  width: 0%;
+  background: var(--color-brass);
+}
+
+/* Custom cursor. Only ever enabled by JS after confirming a fine, hover-capable
+   pointer, so the native cursor is the default and JS-off users never lose it. */
+html.has-custom-cursor,
+html.has-custom-cursor a,
+html.has-custom-cursor button {
+  cursor: none;
+}
+.cursor-dot,
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 70;
+  border-radius: 9999px;
+  will-change: transform;
+  /* Hidden until JS confirms the first real mousemove — never rendered at a
+     default/guessed position before the browser has told us where the
+     cursor actually is. */
+  opacity: 0;
+}
+.cursor-dot--visible,
+.cursor-ring--visible {
+  opacity: 1;
+}
+.cursor-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--color-ink);
+}
+.cursor-ring {
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--color-brass);
+  transition: width 0.2s ease, height 0.2s ease, background-color 0.2s ease;
+}
+.cursor-ring--active {
+  width: 48px;
+  height: 48px;
+  background: color-mix(in srgb, var(--color-brass) 12%, transparent);
+}
+
+/* Cursor spotlight glow, scoped to individual dark sections via the Spotlight
+   wrapper component (each instance tracks the cursor within its own bounds). */
+.spotlight-glow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    600px circle at var(--spot-x, 50%) var(--spot-y, 50%),
+    color-mix(in srgb, var(--color-brass) 16%, transparent),
+    transparent 60%
+  );
+}
+
+/* Ambient drifting glow behind the hero headline. */
+@keyframes drift {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(30px, -20px) scale(1.08);
+  }
+}
+.ambient-glow {
+  position: absolute;
+  pointer-events: none;
+  border-radius: 9999px;
+  background: radial-gradient(circle, color-mix(in srgb, var(--color-brass) 25%, transparent), transparent 70%);
+  filter: blur(60px);
+  animation: drift 22s ease-in-out infinite;
+}
+
+@media (hover: none), (pointer: coarse) {
+  .cursor-dot,
+  .cursor-ring {
+    display: none;
+  }
 }
