@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { LedgerSection } from "@/components/layout/LedgerSection";
+import { ImageBanner } from "@/components/sections/ImageBanner";
 import { EntityQuiz } from "@/components/tools/EntityQuiz";
 
 export const metadata: Metadata = {
@@ -9,15 +10,23 @@ export const metadata: Metadata = {
 
 export default function EntityQuizPage() {
   return (
-    <LedgerSection label="Entity quiz" className="pt-ledger-3">
-      <h1 className="font-display text-38 font-medium text-ink">Which entity fits you?</h1>
-      <p className="mt-4 max-w-[65ch] text-18 text-slate">
-        Six questions, a starting point, not a filing. We&apos;ll confirm the real answer once we
-        see your numbers.
-      </p>
-      <div className="mt-ledger-2 max-w-2xl">
-        <EntityQuiz />
-      </div>
-    </LedgerSection>
+    <>
+      <ImageBanner
+        image="/images/services/entity-formation.jpg"
+        eyebrow="Entity quiz"
+        heading="Which entity fits you?"
+        body={
+          <p>
+            Six questions, a starting point, not a filing. We&apos;ll confirm the real answer once
+            we see your numbers.
+          </p>
+        }
+      />
+      <LedgerSection label="Entity quiz">
+        <div className="max-w-2xl">
+          <EntityQuiz />
+        </div>
+      </LedgerSection>
+    </>
   );
 }

@@ -65,6 +65,11 @@ const items = [
   { category: "articles", slug: "what-triggers-an-irs-notice", query: "person opening mail envelope looking concerned", orientation: "landscape" },
   { category: "articles", slug: "quarterly-estimates-stop-the-april-surprise", query: "calendar and financial planning on desk", orientation: "landscape" },
   { category: "articles", slug: "bookkeeping-cleanup-cost-of-neglect", query: "messy desk with receipts and paperwork", orientation: "landscape" },
+
+  // Standalone page banners (3)
+  { category: "pages", slug: "careers", query: "small team meeting around table discussion", orientation: "landscape" },
+  { category: "pages", slug: "privacy", query: "laptop with padlock data security", orientation: "landscape" },
+  { category: "pages", slug: "terms", query: "reviewing legal contract document with pen", orientation: "landscape" },
 ];
 
 async function searchPexels(apiKey, query, orientation) {

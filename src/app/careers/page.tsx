@@ -1,7 +1,12 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { LedgerSection } from "@/components/layout/LedgerSection";
+import { ImageBanner } from "@/components/sections/ImageBanner";
 import { CTA } from "@/components/ui/CTA";
+import { DuotoneImage } from "@/components/ui/DuotoneImage";
+import { Reveal } from "@/components/ui/Reveal";
 import { siteConfig } from "@/config/site";
+import { team } from "@/content/team";
 
 export const metadata: Metadata = {
   title: "Careers",
@@ -11,9 +16,14 @@ export const metadata: Metadata = {
 export default function CareersPage() {
   return (
     <>
-      <LedgerSection label="Careers" className="pt-ledger-3">
-        <h1 className="font-display text-38 font-medium text-ink">Small firm, real ownership of the work.</h1>
-        <div className="mt-6 flex flex-col gap-6 text-18 text-slate">
+      <ImageBanner
+        image="/images/pages/careers.jpg"
+        eyebrow="Careers"
+        heading="Small firm, real ownership of the work."
+      />
+
+      <LedgerSection label="Working here">
+        <div className="flex flex-col gap-6 text-18 text-slate">
           <p className="max-w-[65ch]">
             We&apos;re a small firm, which means whoever handles a client&apos;s books or return
             owns it end to end rather than passing pieces down an assembly line. Tax season is
@@ -38,6 +48,25 @@ export default function CareersPage() {
           </p>
         </div>
       </LedgerSection>
+
+      <LedgerSection label="Who you'd work with" tone="raised">
+        <div className="flex flex-wrap gap-6">
+          {team.map((member, index) => (
+            <Reveal key={member.slug} delay={Math.min(index, 4) * 60}>
+              <Link href="/team" className="flex w-24 flex-col items-center gap-2 text-center">
+                <DuotoneImage src={member.photo} alt="" sizes="64px" className="size-16 rounded-full" />
+                <span className="text-14 text-ink">{member.name.split(",")[0]}</span>
+              </Link>
+            </Reveal>
+          ))}
+        </div>
+        <div className="mt-6">
+          <Link href="/team" className="text-16 text-ink underline-offset-4 hover:underline">
+            Meet the full team
+          </Link>
+        </div>
+      </LedgerSection>
+
       <CTA heading="Have questions before reaching out?" action={{ label: "Contact us", href: "/contact" }} />
     </>
   );

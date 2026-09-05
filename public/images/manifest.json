@@ -133,5 +133,20 @@
     "path": "/images/articles/bookkeeping-cleanup-cost-of-neglect.jpg",
     "photographer": "https://kaboompics.com/",
     "pexelsUrl": "https://www.pexels.com/photo/person-holding-oink-calculator-7680744/"
+  },
+  "pages/careers": {
+    "path": "/images/pages/careers.jpg",
+    "photographer": "Mikhail Nilov",
+    "pexelsUrl": "https://www.pexels.com/photo/employees-listening-to-their-boss-talking-in-front-of-them-7988213/"
+  },
+  "pages/privacy": {
+    "path": "/images/pages/privacy.jpg",
+    "photographer": "Dan Nelson",
+    "pexelsUrl": "https://www.pexels.com/photo/a-laptop-over-a-round-table-4973899/"
+  },
+  "pages/terms": {
+    "path": "/images/pages/terms.jpg",
+    "photographer": "Kindel Media",
+    "pexelsUrl": "https://www.pexels.com/photo/a-person-signing-a-document-7054502/"
   }
 }
