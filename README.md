@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Meridian Ledger CPA
 
-## Getting Started
+Marketing site for Meridian Ledger CPA, a fictional CPA firm in Austin, TX. Built with Next.js (App Router), TypeScript, and Tailwind CSS v4.
 
-First, run the development server:
+**Live:** [meridian-ledger-one.vercel.app](https://meridian-ledger-one.vercel.app/)
+
+## Stack
+
+- Next.js (App Router, Turbopack, static generation)
+- TypeScript
+- Tailwind CSS v4
+- Web3Forms for the contact form
+- Playwright for screenshot-based visual review
+
+## Getting started
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `npm run dev` — start the dev server
+- `npm run build` — production build
+- `npm run start` — serve the production build
+- `npm run lint` — ESLint
+- `npm run screenshot` — starts the dev server, visits every route in the sitemap, and saves PNGs at 1440px and 390px to `.screenshots/` (gitignored)
 
-## Learn More
+## Project structure
 
-To learn more about Next.js, take a look at the following resources:
+- `src/config/site.ts` — brand, navigation, and contact config
+- `src/content/` — typed content data (services, industries, articles, team, FAQs, deadlines)
+- `src/components/` — shared UI, layout, section, and tool components
+- `src/app/` — routes, one per page in the sitemap, plus `sitemap.ts`, `robots.ts`, and `opengraph-image.tsx`
+- `public/images/` — site imagery sourced from the Pexels API, with `manifest.json` mapping each image to its slug, photographer, and source URL for attribution
+- `scripts/fetch-images.mjs` — fetches and saves images from Pexels for a hardcoded list of queries (reads `PEXELS_API_KEY` from `.env.local`)
+- `scripts/screenshot.mjs` — the visual review tool described above
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Environment variables
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Create a `.env.local` (never committed) with:
 
-## Deploy on Vercel
+```
+PEXELS_API_KEY=your_key_here
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Only needed if re-running `scripts/fetch-images.mjs`. The Web3Forms access key used by the contact form is a public, client-side key and lives in `src/config/site.ts`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Deployment
+
+Deployed on Vercel, auto-deploying from `main`.
