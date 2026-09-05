@@ -1,0 +1,137 @@
+{
+  "hero/hero": {
+    "path": "/images/hero/hero.jpg",
+    "photographer": "Mikhail Nilov",
+    "pexelsUrl": "https://www.pexels.com/photo/person-holding-a-pen-on-top-of-a-desk-8296979/"
+  },
+  "services/individual-tax-preparation": {
+    "path": "/images/services/individual-tax-preparation.jpg",
+    "photographer": "Leeloo The First",
+    "pexelsUrl": "https://www.pexels.com/photo/a-person-holding-a-tax-form-7247409/"
+  },
+  "services/tax-planning": {
+    "path": "/images/services/tax-planning.jpg",
+    "photographer": "RDNE Stock project",
+    "pexelsUrl": "https://www.pexels.com/photo/a-mortgage-broker-talking-to-a-client-8292830/"
+  },
+  "services/business-tax-returns": {
+    "path": "/images/services/business-tax-returns.jpg",
+    "photographer": "Vanessa Garcia",
+    "pexelsUrl": "https://www.pexels.com/photo/photo-of-man-reviewing-the-documents-6325919/"
+  },
+  "services/bookkeeping": {
+    "path": "/images/services/bookkeeping.jpg",
+    "photographer": "https://kaboompics.com/",
+    "pexelsUrl": "https://www.pexels.com/photo/woman-at-wooden-desk-reading-a-receipt-5900077/"
+  },
+  "services/payroll": {
+    "path": "/images/services/payroll.jpg",
+    "photographer": "RDNE Stock project",
+    "pexelsUrl": "https://www.pexels.com/photo/person-working-on-documents-7821540/"
+  },
+  "services/cfo-advisory": {
+    "path": "/images/services/cfo-advisory.jpg",
+    "photographer": "RDNE Stock project",
+    "pexelsUrl": "https://www.pexels.com/photo/person-holding-white-printer-paper-7580792/"
+  },
+  "services/irs-representation": {
+    "path": "/images/services/irs-representation.jpg",
+    "photographer": "Nicola Barts",
+    "pexelsUrl": "https://www.pexels.com/photo/a-bearded-man-looking-the-paper-7926667/"
+  },
+  "services/entity-formation": {
+    "path": "/images/services/entity-formation.jpg",
+    "photographer": "Kampus Production",
+    "pexelsUrl": "https://www.pexels.com/photo/close-up-of-shaking-hands-between-men-8441790/"
+  },
+  "services/sales-tax-compliance": {
+    "path": "/images/services/sales-tax-compliance.jpg",
+    "photographer": "Tiger Lily",
+    "pexelsUrl": "https://www.pexels.com/photo/photo-of-a-man-scanning-products-in-a-warehouse-4483942/"
+  },
+  "services/estate-and-trust": {
+    "path": "/images/services/estate-and-trust.jpg",
+    "photographer": "Kampus Production",
+    "pexelsUrl": "https://www.pexels.com/photo/a-man-sitting-on-couch-holding-a-paper-beside-an-elderly-person-8441820/"
+  },
+  "industries/real-estate-and-short-term-rentals": {
+    "path": "/images/industries/real-estate-and-short-term-rentals.jpg",
+    "photographer": "Terje Sollie",
+    "pexelsUrl": "https://www.pexels.com/photo/centerpiece-on-coffee-table-beside-sofa-with-three-pillows-298842/"
+  },
+  "industries/medical-and-dental-practices": {
+    "path": "/images/industries/medical-and-dental-practices.jpg",
+    "photographer": "Daniel Frank",
+    "pexelsUrl": "https://www.pexels.com/photo/white-dental-equipment-near-wall-305567/"
+  },
+  "industries/restaurants-and-hospitality": {
+    "path": "/images/industries/restaurants-and-hospitality.jpg",
+    "photographer": "Rene Terp",
+    "pexelsUrl": "https://www.pexels.com/photo/round-white-ceramic-plates-2977515/"
+  },
+  "industries/construction-and-trades": {
+    "path": "/images/industries/construction-and-trades.jpg",
+    "photographer": "Life Of Pix",
+    "pexelsUrl": "https://www.pexels.com/photo/man-wearing-black-denim-pants-with-carrying-hammer-on-holster-8092/"
+  },
+  "industries/ecommerce-and-saas": {
+    "path": "/images/industries/ecommerce-and-saas.jpg",
+    "photographer": "cottonbro studio",
+    "pexelsUrl": "https://www.pexels.com/photo/men-sitting-at-the-desks-in-an-office-and-using-computers-6804068/"
+  },
+  "industries/nonprofits": {
+    "path": "/images/industries/nonprofits.jpg",
+    "photographer": "Julia M Cameron",
+    "pexelsUrl": "https://www.pexels.com/photo/people-sorting-clothes-6994869/"
+  },
+  "team/sarah-whitfield": {
+    "path": "/images/team/sarah-whitfield.jpg",
+    "photographer": "Ifeyinka Adeyemo",
+    "pexelsUrl": "https://www.pexels.com/photo/professional-corporate-headshot-of-smiling-woman-29852895/"
+  },
+  "team/marcus-odei": {
+    "path": "/images/team/marcus-odei.jpg",
+    "photographer": "Vincent Santamaria",
+    "pexelsUrl": "https://www.pexels.com/photo/portrait-of-a-business-professional-in-suit-37148308/"
+  },
+  "team/elena-park": {
+    "path": "/images/team/elena-park.jpg",
+    "photographer": "RDNE Stock project",
+    "pexelsUrl": "https://www.pexels.com/photo/photo-of-woman-in-formal-wear-7468194/"
+  },
+  "team/david-holloway": {
+    "path": "/images/team/david-holloway.jpg",
+    "photographer": "Murat IŞIK",
+    "pexelsUrl": "https://www.pexels.com/photo/portrait-of-man-20293949/"
+  },
+  "team/priya-nair": {
+    "path": "/images/team/priya-nair.jpg",
+    "photographer": "Mizuno K",
+    "pexelsUrl": "https://www.pexels.com/photo/businesswoman-with-badge-posing-outdoors-13801472/"
+  },
+  "team/james-calloway": {
+    "path": "/images/team/james-calloway.jpg",
+    "photographer": "King Cyrus  Studios",
+    "pexelsUrl": "https://www.pexels.com/photo/professional-young-man-in-business-attire-with-glasses-30496625/"
+  },
+  "articles/s-corp-election-math": {
+    "path": "/images/articles/s-corp-election-math.jpg",
+    "photographer": "Tara Winstead",
+    "pexelsUrl": "https://www.pexels.com/photo/calculator-beside-red-pens-7111516/"
+  },
+  "articles/what-triggers-an-irs-notice": {
+    "path": "/images/articles/what-triggers-an-irs-notice.jpg",
+    "photographer": "RDNE Stock project",
+    "pexelsUrl": "https://www.pexels.com/photo/a-person-holding-white-and-blue-envelope-7821490/"
+  },
+  "articles/quarterly-estimates-stop-the-april-surprise": {
+    "path": "/images/articles/quarterly-estimates-stop-the-april-surprise.jpg",
+    "photographer": "RDNE Stock project",
+    "pexelsUrl": "https://www.pexels.com/photo/person-writing-on-white-paper-6172475/"
+  },
+  "articles/bookkeeping-cleanup-cost-of-neglect": {
+    "path": "/images/articles/bookkeeping-cleanup-cost-of-neglect.jpg",
+    "photographer": "https://kaboompics.com/",
+    "pexelsUrl": "https://www.pexels.com/photo/person-holding-oink-calculator-7680744/"
+  }
+}
