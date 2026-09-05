@@ -3,9 +3,10 @@
 import { useEffect, useMemo, useState } from "react";
 import { deadlines } from "@/content/deadlines";
 import type { Deadline, DeadlineCategory } from "@/content/types";
-import { getNextDeadline, getDaysRemaining, formatDeadlineDate } from "@/lib/deadlines";
+import { getNextDeadline, formatDeadlineDate } from "@/lib/deadlines";
 import { Table, type TableColumn } from "@/components/ui/Table";
 import { Figure } from "@/components/ui/Figure";
+import { useCountdown } from "@/lib/useCountdown";
 
 const filters: { label: string; value: DeadlineCategory | "all" }[] = [
   { label: "All", value: "all" },
@@ -31,6 +32,7 @@ export function DeadlineTracker() {
   }, []);
 
   const next = today ? getNextDeadline(deadlines, today) : undefined;
+  const countdown = useCountdown(next?.date);
 
   const filtered = useMemo<Deadline[]>(
     () => (filter === "all" ? deadlines : deadlines.filter((d) => d.category === filter)),
@@ -61,12 +63,12 @@ export function DeadlineTracker() {
           <p className="mt-2 text-18 text-ink">
             {next.label} &mdash; {formatDeadlineDate(next.date)}
           </p>
-          {today ? (
-            <p className="mt-1 text-16 text-slate">
+          {countdown ? (
+            <p className="mt-1 text-16 tabular-nums text-slate">
               <Figure emphasis className="font-display text-22">
-                {getDaysRemaining(next.date, today)}
+                {countdown.days}
               </Figure>{" "}
-              days away
+              days, {countdown.hours}h {countdown.minutes}m {countdown.seconds}s
             </p>
           ) : null}
         </div>

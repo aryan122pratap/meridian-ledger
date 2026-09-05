@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { Figure } from "@/components/ui/Figure";
+import { AnimatedFigure } from "@/components/ui/AnimatedFigure";
 import { Disclaimer } from "@/components/ui/Disclaimer";
 
 export function BookkeepingEstimator() {
@@ -102,20 +102,14 @@ export function BookkeepingEstimator() {
       <div className="border border-rule bg-paper-raised p-6">
         <p className="text-14 text-slate">Estimated monthly bookkeeping</p>
         <p className="mt-2 font-display text-38 text-ink">
-          <Figure emphasis prefix="$">
-            {low.toLocaleString()}
-          </Figure>
+          <AnimatedFigure emphasis prefix="$" value={low} />
           {" "}&ndash;{" "}
-          <Figure emphasis prefix="$">
-            {high.toLocaleString()}
-          </Figure>
+          <AnimatedFigure emphasis prefix="$" value={high} />
         </p>
         {monthsBehind > 0 ? (
           <p className="mt-4 text-16 text-slate">
             Plus a one-time catch-up of roughly{" "}
-            <Figure emphasis prefix="$">
-              {catchUp.toLocaleString()}
-            </Figure>{" "}
+            <AnimatedFigure emphasis prefix="$" value={catchUp} />{" "}
             to get {monthsBehind} month{monthsBehind === 1 ? "" : "s"} of books current.
           </p>
         ) : null}

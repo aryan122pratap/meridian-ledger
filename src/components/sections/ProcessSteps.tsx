@@ -1,5 +1,6 @@
 import { LedgerSection } from "@/components/layout/LedgerSection";
 import { Rule } from "@/components/ui/Rule";
+import { Reveal } from "@/components/ui/Reveal";
 
 const steps = [
   {
@@ -30,9 +31,29 @@ const steps = [
 
 type ProcessStepsProps = {
   heading?: string;
+  layout?: "list" | "cards";
 };
 
-export function ProcessSteps({ heading = "How it works" }: ProcessStepsProps) {
+export function ProcessSteps({ heading = "How it works", layout = "list" }: ProcessStepsProps) {
+  if (layout === "cards") {
+    return (
+      <LedgerSection label={heading}>
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {steps.map((step, index) => (
+            <Reveal key={step.number} delay={index * 80}>
+              <div className="h-full border border-rule bg-paper-raised p-6">
+                <span className="text-14 tabular-nums text-brass">{step.number}</span>
+                <p className="mt-2 text-18 text-ink">{step.label}</p>
+                <p className="mt-1 text-14 tabular-nums text-slate">{step.duration}</p>
+                <p className="mt-3 text-16 text-slate">{step.detail}</p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </LedgerSection>
+    );
+  }
+
   return (
     <LedgerSection label={heading}>
       <div className="flex flex-col">

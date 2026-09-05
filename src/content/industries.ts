@@ -3,6 +3,7 @@ import type { Industry } from "./types";
 export const industries: Industry[] = [
   {
     slug: "real-estate-and-short-term-rentals",
+    image: "/images/industries/real-estate-and-short-term-rentals.jpg",
     name: "Real estate & short-term rentals",
     summary:
       "Depreciation, passive activity rules, and the real estate professional test decide whether your rental losses actually help you this year.",
@@ -20,6 +21,7 @@ export const industries: Industry[] = [
   },
   {
     slug: "medical-and-dental-practices",
+    image: "/images/industries/medical-and-dental-practices.jpg",
     name: "Medical & dental practices",
     summary:
       "Between a professional entity, an associate buy-in, and equipment financed on ten-year notes, the tax return has more moving parts than the practice itself.",
@@ -37,6 +39,7 @@ export const industries: Industry[] = [
   },
   {
     slug: "restaurants-and-hospitality",
+    image: "/images/industries/restaurants-and-hospitality.jpg",
     name: "Restaurants & hospitality",
     summary: "Tip income, thin margins, and a POS system generating a different number than your bank account every night.",
     body:
@@ -53,6 +56,7 @@ export const industries: Industry[] = [
   },
   {
     slug: "construction-and-trades",
+    image: "/images/industries/construction-and-trades.jpg",
     name: "Construction & trades",
     summary: "A job that spans two tax years needs an accounting method that actually matches when the money moves.",
     body:
@@ -69,6 +73,7 @@ export const industries: Industry[] = [
   },
   {
     slug: "ecommerce-and-saas",
+    image: "/images/industries/ecommerce-and-saas.jpg",
     name: "E-commerce & SaaS",
     summary: "Nexus follows your customers, not your office address.",
     body:
@@ -85,6 +90,7 @@ export const industries: Industry[] = [
   },
   {
     slug: "nonprofits",
+    image: "/images/industries/nonprofits.jpg",
     name: "Nonprofits",
     summary: "Tax-exempt doesn't mean tax-return-exempt.",
     body:

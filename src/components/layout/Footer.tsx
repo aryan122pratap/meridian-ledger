@@ -40,9 +40,23 @@ export function Footer() {
               {siteConfig.contact.phone}
             </a>
           </div>
-          <p className="text-14 tabular-nums text-paper/70">
-            &copy; {year} {siteConfig.name}. All rights reserved.
-          </p>
+          <div className="text-right">
+            <p className="text-14 tabular-nums text-paper/70">
+              &copy; {year} {siteConfig.name}. All rights reserved.
+            </p>
+            <p className="mt-1 text-14 text-paper/50">
+              Photography via{" "}
+              <a
+                href="https://www.pexels.com"
+                className="underline-offset-4 hover:underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Pexels
+              </a>
+              .
+            </p>
+          </div>
         </div>
       </div>
     </footer>

@@ -9,6 +9,7 @@ import type { Service } from "./types";
 export const services: Service[] = [
   {
     slug: "individual-tax-preparation",
+    image: "/images/services/individual-tax-preparation.jpg",
     code: "5010",
     name: "Individual tax preparation",
     summary: "Your Form 1040, reviewed by someone who reads it before they sign it.",
@@ -51,6 +52,7 @@ export const services: Service[] = [
   },
   {
     slug: "tax-planning",
+    image: "/images/services/tax-planning.jpg",
     code: "5030",
     name: "Tax planning & projections",
     summary: "Most owners overpay because nobody looks at the return until March.",
@@ -92,6 +94,7 @@ export const services: Service[] = [
   },
   {
     slug: "business-tax-returns",
+    image: "/images/services/business-tax-returns.jpg",
     code: "5020",
     name: "Business tax returns",
     summary: "The business return that matches your bookkeeping, not fights it.",
@@ -134,6 +137,7 @@ export const services: Service[] = [
   },
   {
     slug: "bookkeeping",
+    image: "/images/services/bookkeeping.jpg",
     code: "5040",
     name: "Monthly bookkeeping",
     summary: "Books closed by the 10th, every month, so tax time isn't a surprise.",
@@ -176,6 +180,7 @@ export const services: Service[] = [
   },
   {
     slug: "payroll",
+    image: "/images/services/payroll.jpg",
     code: "5050",
     name: "Payroll services",
     summary: "Payroll run on time, tax deposits made on time, W-2s that match your books.",
@@ -218,6 +223,7 @@ export const services: Service[] = [
   },
   {
     slug: "cfo-advisory",
+    image: "/images/services/cfo-advisory.jpg",
     code: "5060",
     name: "Outsourced CFO & advisory",
     summary: "The finance conversations a growing business needs, without a full-time hire.",
@@ -260,6 +266,7 @@ export const services: Service[] = [
   },
   {
     slug: "irs-representation",
+    image: "/images/services/irs-representation.jpg",
     code: "5070",
     name: "IRS notice & audit representation",
     summary: "A letter from the IRS is not a diagnosis. It's a starting point for a conversation.",
@@ -302,6 +309,7 @@ export const services: Service[] = [
   },
   {
     slug: "entity-formation",
+    image: "/images/services/entity-formation.jpg",
     code: "5080",
     name: "Entity formation & structuring",
     summary: "The paperwork is the easy part. The decision underneath it isn't.",
@@ -344,6 +352,7 @@ export const services: Service[] = [
   },
   {
     slug: "sales-tax-compliance",
+    image: "/images/services/sales-tax-compliance.jpg",
     code: "5090",
     name: "Sales tax & multi-state compliance",
     summary: "Nexus doesn't ask permission before it shows up in a new state.",
@@ -386,6 +395,7 @@ export const services: Service[] = [
   },
   {
     slug: "estate-and-trust",
+    image: "/images/services/estate-and-trust.jpg",
     code: "5100",
     name: "Estate, trust & gift returns",
     summary: "The tax return nobody wants to need, prepared so the rest of it is one less thing.",

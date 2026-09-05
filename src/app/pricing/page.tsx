@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { LedgerSection } from "@/components/layout/LedgerSection";
+import { ImageBanner } from "@/components/sections/ImageBanner";
 import { Table } from "@/components/ui/Table";
 import { Disclaimer } from "@/components/ui/Disclaimer";
 import { CTA } from "@/components/ui/CTA";
@@ -61,19 +62,22 @@ const packages: Package[] = [
 export default function PricingPage() {
   return (
     <>
-      <LedgerSection label="Pricing" className="pt-ledger-3">
-        <h1 className="font-display text-38 font-medium text-ink">
-          Three packages, priced for what you actually need.
-        </h1>
-        <p className="mt-4 max-w-[65ch] text-18 text-slate">
-          Every package bundles bookkeeping and tax work so nothing falls between the two. Prices
-          below are starting monthly rates, confirmed after a short scoping call.
-        </p>
-      </LedgerSection>
+      <ImageBanner
+        image="/images/services/bookkeeping.jpg"
+        eyebrow="Pricing"
+        heading="Three packages, priced for what you actually need."
+        body={
+          <p>
+            Every package bundles bookkeeping and tax work so nothing falls between the two.
+            Prices below are starting monthly rates, confirmed after a short scoping call.
+          </p>
+        }
+      />
 
-      {packages.map((pkg) => (
+      {packages.map((pkg, index) => (
         <LedgerSection
           key={pkg.name}
+          tone={index % 2 === 0 ? "paper" : "raised"}
           label={
             <div>
               <p>{pkg.name}</p>

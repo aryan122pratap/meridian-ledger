@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { LedgerSection } from "@/components/layout/LedgerSection";
+import { ImageBanner } from "@/components/sections/ImageBanner";
 import { Accordion } from "@/components/ui/Accordion";
 import { CTA } from "@/components/ui/CTA";
 import { JsonLd } from "@/components/JsonLd";
@@ -15,9 +16,13 @@ export default function FaqPage() {
   return (
     <>
       <JsonLd data={getFaqSchema(faqs)} />
-      <LedgerSection label="FAQ" className="pt-ledger-3">
-        <h1 className="font-display text-38 font-medium text-ink">Questions we hear a lot.</h1>
-        <div className="mt-8 max-w-2xl">
+      <ImageBanner
+        image="/images/services/irs-representation.jpg"
+        eyebrow="FAQ"
+        heading="Questions we hear a lot."
+      />
+      <LedgerSection label="FAQ" tone="grid">
+        <div className="max-w-2xl">
           <Accordion items={faqs} />
         </div>
       </LedgerSection>

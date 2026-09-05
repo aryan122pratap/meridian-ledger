@@ -21,7 +21,7 @@ export default function IndustriesPage() {
           issue before it becomes a notice.
         </p>
       </LedgerSection>
-      <IndustryGrid />
+      <IndustryGrid variant="cards" />
       <CTA heading="Don't see your industry?" action={{ label: "Tell us about your business", href: "/contact" }} />
     </>
   );

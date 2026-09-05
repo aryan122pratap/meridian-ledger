@@ -121,7 +121,7 @@ export function EntityQuiz() {
     const result = results[winner];
 
     return (
-      <div className="flex flex-col gap-6">
+      <div key="result" className="animate-fade-in flex flex-col gap-6">
         <p className="text-14 text-slate">Result</p>
         <h2 className="font-display text-28 font-medium text-ink">{result.name}</h2>
         <p className="max-w-[65ch] text-16 text-slate">{result.reasoning}</p>
@@ -145,7 +145,7 @@ export function EntityQuiz() {
   const question = questions[step];
 
   return (
-    <div className="flex flex-col gap-6">
+    <div key={step} className="animate-fade-in flex flex-col gap-6">
       <p className="text-14 tabular-nums text-slate">
         Question {step + 1} of {questions.length}
       </p>

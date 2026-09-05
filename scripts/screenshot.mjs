@@ -115,7 +115,9 @@ async function main() {
       for (const viewport of viewports) {
         await page.setViewportSize({ width: viewport.width, height: viewport.height });
         await page.goto(`${baseUrl}${route}`, { waitUntil: "networkidle", timeout: 60000 });
-        await page.waitForTimeout(1000);
+        // Long enough for the scroll-reveal fallback timer (see Reveal.tsx) to have
+        // fired on every section, so full-page capture never catches pre-reveal content.
+        await page.waitForTimeout(2200);
         const filename = `${routeToFilename(route)}-${viewport.label}.png`;
         await page.screenshot({ path: path.join(screenshotsDir, filename), fullPage: true });
         console.log(`Saved ${filename}`);

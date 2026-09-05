@@ -63,3 +63,52 @@ body {
     scroll-behavior: auto !important;
   }
 }
+
+/* Ledger-grid texture: 1px rule lines on a 40px grid, used sparingly as a section backdrop. */
+.bg-ledger-grid {
+  background-image:
+    linear-gradient(to right, color-mix(in srgb, var(--color-rule) 60%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in srgb, var(--color-rule) 60%, transparent) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Duotone treatment for all photographic images — ink shadows, ledger-green mids/highlights. */
+.duotone-overlay {
+  background: linear-gradient(160deg, var(--color-ink), var(--color-ledger));
+  mix-blend-mode: color;
+}
+
+/* Underline-draw hover for card and row titles: a rule that grows in rather than a shadow lift. */
+.rule-hover {
+  position: relative;
+}
+.rule-hover::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+.rule-hover:hover::after,
+.rule-hover:focus-visible::after {
+  transform: scaleX(1);
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.animate-fade-in {
+  animation: fade-in 0.3s ease;
+}

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { articles } from "@/content/articles";
 import { LedgerSection } from "@/components/layout/LedgerSection";
+import { DuotoneImage } from "@/components/ui/DuotoneImage";
 import { CTA } from "@/components/ui/CTA";
 
 export async function generateStaticParams() {
@@ -60,6 +61,7 @@ export default async function ArticlePage({ params }: PageProps<"/insights/[slug
       >
         <h1 className="font-display text-38 font-medium text-ink">{article.title}</h1>
         <p className="mt-4 max-w-[65ch] font-display text-22 text-ink">{article.dek}</p>
+        <DuotoneImage src={article.image} alt="" sizes="(max-width: 1024px) 100vw, 800px" className="mt-8 aspect-[21/9]" />
         <div className="mt-8 flex flex-col gap-4">{paragraphs(article.body)}</div>
       </LedgerSection>
       <CTA

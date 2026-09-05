@@ -3,6 +3,7 @@ import type { TeamMember } from "./types";
 export const team: TeamMember[] = [
   {
     slug: "sarah-whitfield",
+    photo: "/images/team/sarah-whitfield.jpg",
     name: "Sarah Whitfield, CPA",
     role: "Founding Partner",
     bio:
@@ -10,6 +11,7 @@ export const team: TeamMember[] = [
   },
   {
     slug: "marcus-odei",
+    photo: "/images/team/marcus-odei.jpg",
     name: "Marcus Odei, CPA",
     role: "Tax Director",
     bio:
@@ -17,6 +19,7 @@ export const team: TeamMember[] = [
   },
   {
     slug: "elena-park",
+    photo: "/images/team/elena-park.jpg",
     name: "Elena Park, EA",
     role: "Senior Tax Associate",
     bio:
@@ -24,6 +27,7 @@ export const team: TeamMember[] = [
   },
   {
     slug: "david-holloway",
+    photo: "/images/team/david-holloway.jpg",
     name: "David Holloway",
     role: "Client Accounting Services Manager",
     bio:
@@ -31,6 +35,7 @@ export const team: TeamMember[] = [
   },
   {
     slug: "priya-nair",
+    photo: "/images/team/priya-nair.jpg",
     name: "Priya Nair, CPA",
     role: "Advisory & CFO Services Lead",
     bio:
@@ -38,6 +43,7 @@ export const team: TeamMember[] = [
   },
   {
     slug: "james-calloway",
+    photo: "/images/team/james-calloway.jpg",
     name: "James Calloway",
     role: "Payroll & Compliance Specialist",
     bio:

@@ -9,8 +9,9 @@ type CTAProps = {
 export function CTA({ heading, action, className }: CTAProps) {
   return (
     <div
+      style={{ background: "linear-gradient(135deg, var(--color-ink), var(--color-ledger-active))" }}
       className={[
-        "flex flex-col items-start gap-6 bg-ink px-6 py-ledger-2 text-paper sm:flex-row sm:items-center sm:justify-between sm:px-12",
+        "flex flex-col items-start gap-6 px-6 py-ledger-2 text-paper sm:flex-row sm:items-center sm:justify-between sm:px-12",
         className,
       ]
         .filter(Boolean)

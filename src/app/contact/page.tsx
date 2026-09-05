@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { LedgerSection } from "@/components/layout/LedgerSection";
 import { ContactForm } from "@/components/ui/ContactForm";
+import { DuotoneImage } from "@/components/ui/DuotoneImage";
 import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
@@ -21,6 +22,12 @@ export default function ContactPage() {
         <ContactForm />
 
         <div className="flex flex-col gap-8">
+          <DuotoneImage
+            src="/images/services/individual-tax-preparation.jpg"
+            alt=""
+            sizes="(max-width: 768px) 100vw, 400px"
+            className="aspect-[16/9]"
+          />
           <div>
             <p className="text-14 text-slate">Phone</p>
             <a href={siteConfig.contact.phoneHref} className="text-18 text-ink underline-offset-4 hover:underline">

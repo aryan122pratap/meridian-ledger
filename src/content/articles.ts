@@ -7,6 +7,7 @@ import type { Article } from "./types";
 export const articles: Article[] = [
   {
     slug: "s-corp-election-math",
+    image: "/images/articles/s-corp-election-math.jpg",
     title: "The S-corp election isn't free money — here's the actual math",
     dek: "An S-corp election only saves money once payroll costs and reasonable salary rules are factored in. Here's where the break-even actually sits.",
     publishedAt: "2026-02-10",
@@ -17,6 +18,7 @@ export const articles: Article[] = [
   },
   {
     slug: "what-triggers-an-irs-notice",
+    image: "/images/articles/what-triggers-an-irs-notice.jpg",
     title: "What triggers an IRS notice for a small business (and what doesn't)",
     dek: "Most notices are computer-generated mismatches, not audits. Knowing the difference changes how you should respond.",
     publishedAt: "2026-04-06",
@@ -27,6 +29,7 @@ export const articles: Article[] = [
   },
   {
     slug: "quarterly-estimates-stop-the-april-surprise",
+    image: "/images/articles/quarterly-estimates-stop-the-april-surprise.jpg",
     title: "Quarterly estimates: how to stop the April surprise",
     dek: "The safe harbor rules that keep you from an underpayment penalty are simpler than most people assume.",
     publishedAt: "2026-05-19",
@@ -37,6 +40,7 @@ export const articles: Article[] = [
   },
   {
     slug: "bookkeeping-cleanup-cost-of-neglect",
+    image: "/images/articles/bookkeeping-cleanup-cost-of-neglect.jpg",
     title: "Bookkeeping cleanup: what a year of neglect actually costs",
     dek: "A year of unreconciled books doesn't just cost the cleanup invoice. It costs the deductions that go unclaimed while nobody's looking.",
     publishedAt: "2026-06-25",

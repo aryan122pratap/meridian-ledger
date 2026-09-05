@@ -19,7 +19,7 @@ export default function ServicesPage() {
           it&apos;s built from.
         </p>
       </LedgerSection>
-      <ServiceGrid />
+      <ServiceGrid variant="cards" />
       <CTA heading="Not sure which service you need?" action={{ label: "Book a consultation", href: "/contact" }} />
     </>
   );

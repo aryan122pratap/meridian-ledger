@@ -11,6 +11,7 @@ export type IncludedItem = {
 
 export type Service = {
   slug: string;
+  image: string;
   code: string;
   name: string;
   summary: string;
@@ -24,6 +25,7 @@ export type Service = {
 
 export type Industry = {
   slug: string;
+  image: string;
   name: string;
   summary: string;
   body: string;
@@ -33,6 +35,7 @@ export type Industry = {
 
 export type Article = {
   slug: string;
+  image: string;
   title: string;
   dek: string;
   publishedAt: string;
@@ -42,10 +45,10 @@ export type Article = {
 
 export type TeamMember = {
   slug: string;
+  photo: string;
   name: string;
   role: string;
   bio: string;
-  photo?: string;
 };
 
 export type DeadlineCategory = "individual" | "business" | "payroll";
