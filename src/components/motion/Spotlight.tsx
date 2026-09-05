@@ -42,7 +42,7 @@ export function Spotlight({ children, className }: SpotlightProps) {
   return (
     <div ref={ref} className={["relative isolate", className].filter(Boolean).join(" ")}>
       <div aria-hidden="true" className="spotlight-glow" />
-      <div className="relative">{children}</div>
+      {children}
     </div>
   );
 }

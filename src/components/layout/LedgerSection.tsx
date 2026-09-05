@@ -26,8 +26,8 @@ export function LedgerSection({
   noContainer = false,
 }: LedgerSectionProps) {
   const grid = (
-    <div className="grid grid-cols-1 gap-6 md:grid-cols-[200px_1px_1fr] md:gap-8">
-      <div className="font-display text-16 font-medium text-ink">{label}</div>
+    <div className="grid grid-cols-1 gap-6 md:grid-cols-[220px_1px_1fr] md:gap-8">
+      <div className="font-display text-22 font-medium text-ink">{label}</div>
       <Rule orientation="vertical" className="hidden md:block" />
       <div className="min-w-0">{children}</div>
     </div>

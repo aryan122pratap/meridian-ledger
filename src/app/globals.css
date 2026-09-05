@@ -70,8 +70,6 @@ body {
     animation-duration: 0.01ms !important;
   }
 
-  .cursor-dot,
-  .cursor-ring,
   .ambient-glow,
   .spotlight-glow {
     display: none !important;
@@ -156,57 +154,20 @@ body::after {
   background: var(--color-brass);
 }
 
-/* Custom cursor. Only ever enabled by JS after confirming a fine, hover-capable
-   pointer, so the native cursor is the default and JS-off users never lose it. */
-html.has-custom-cursor,
-html.has-custom-cursor a,
-html.has-custom-cursor button {
-  cursor: none;
-}
-.cursor-dot,
-.cursor-ring {
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  z-index: 70;
-  border-radius: 9999px;
-  will-change: transform;
-  /* Hidden until JS confirms the first real mousemove — never rendered at a
-     default/guessed position before the browser has told us where the
-     cursor actually is. */
-  opacity: 0;
-}
-.cursor-dot--visible,
-.cursor-ring--visible {
-  opacity: 1;
-}
-.cursor-dot {
-  width: 6px;
-  height: 6px;
-  background: var(--color-ink);
-}
-.cursor-ring {
-  width: 32px;
-  height: 32px;
-  border: 1px solid var(--color-brass);
-  transition: width 0.2s ease, height 0.2s ease, background-color 0.2s ease;
-}
-.cursor-ring--active {
-  width: 48px;
-  height: 48px;
-  background: color-mix(in srgb, var(--color-brass) 12%, transparent);
-}
-
 /* Cursor spotlight glow, scoped to individual dark sections via the Spotlight
-   wrapper component (each instance tracks the cursor within its own bounds). */
+   wrapper component (each instance tracks the cursor within its own bounds).
+   z-index: -1 (contained by the wrapper's own `isolate`) keeps this behind
+   the section's real content without needing to wrap that content in an
+   extra positioned div, which would otherwise break any grid/flex layout
+   the content itself relies on. */
 .spotlight-glow {
   position: absolute;
   inset: 0;
+  z-index: -1;
   pointer-events: none;
   background: radial-gradient(
-    600px circle at var(--spot-x, 50%) var(--spot-y, 50%),
-    color-mix(in srgb, var(--color-brass) 16%, transparent),
+    500px circle at var(--spot-x, 50%) var(--spot-y, 50%),
+    color-mix(in srgb, var(--color-brass) 14%, transparent),
     transparent 60%
   );
 }
@@ -228,11 +189,4 @@ html.has-custom-cursor button {
   background: radial-gradient(circle, color-mix(in srgb, var(--color-brass) 25%, transparent), transparent 70%);
   filter: blur(60px);
   animation: drift 22s ease-in-out infinite;
-}
-
-@media (hover: none), (pointer: coarse) {
-  .cursor-dot,
-  .cursor-ring {
-    display: none;
-  }
 }

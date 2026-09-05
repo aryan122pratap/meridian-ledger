@@ -3,7 +3,6 @@ import { Fraunces, Inter } from "next/font/google";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { JsonLd } from "@/components/JsonLd";
-import { CustomCursor } from "@/components/motion/CustomCursor";
 import { ScrollProgress } from "@/components/motion/ScrollProgress";
 import { PageTransition } from "@/components/motion/PageTransition";
 import { siteConfig } from "@/config/site";
@@ -50,7 +49,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="flex min-h-full flex-col bg-paper font-body text-ink antialiased">
         <JsonLd data={getLocalBusinessSchema()} />
         <ScrollProgress />
-        <CustomCursor />
         <Header />
         <main className="flex-1">
           <PageTransition>{children}</PageTransition>

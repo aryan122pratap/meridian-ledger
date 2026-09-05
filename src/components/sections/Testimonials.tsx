@@ -36,8 +36,8 @@ const testimonials = [
 export function Testimonials() {
   return (
     <section className="border-b border-rule bg-ink text-paper">
-      <Spotlight className="mx-auto grid max-w-6xl grid-cols-1 gap-6 px-6 py-ledger-2 sm:px-12 md:grid-cols-[200px_1px_1fr] md:gap-8">
-        <div className="font-display text-16 font-medium text-paper">Client statements</div>
+      <Spotlight className="mx-auto grid max-w-6xl grid-cols-1 gap-6 px-6 py-ledger-2 sm:px-12 md:grid-cols-[220px_1px_1fr] md:gap-8">
+        <div className="font-display text-22 font-medium text-paper">Client statements</div>
         <div aria-hidden="true" className="hidden w-px self-stretch bg-paper/15 md:block" />
         <div className="flex min-w-0 flex-col gap-8">
           {testimonials.map((t, index) => (
